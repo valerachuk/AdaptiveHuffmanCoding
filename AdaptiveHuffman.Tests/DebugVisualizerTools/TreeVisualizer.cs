@@ -1,5 +1,6 @@
 using AdaptiveHuffman.Core.Tree;
 using System.Text.Json;
+using AdaptiveHuffman.Core.Tree.Interfaces;
 
 namespace AdaptiveHuffman.Tests.DebugVisualizerTools
 {
