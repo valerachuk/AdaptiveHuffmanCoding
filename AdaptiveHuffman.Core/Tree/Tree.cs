@@ -71,6 +71,33 @@ namespace AdaptiveHuffman.Core.Tree
       currentItem.Weight++;
     }
 
+    public (string, bool) FindLeafOrNYTByPayload(byte payload)
+    {
+      string leafPath = null;
+      string nytPath = null;
+
+      bool FindLeafOrNYT(string currentPath, ITreeNode currentNode)
+      {
+        switch (currentNode)
+        {
+          case NYTNode nyt:
+            nytPath = currentPath;
+            break;
+          case LeafNode leaf when leaf.Payload == payload:
+            leafPath = currentPath;
+            return true;
+          case InnerNode inner:
+            var foundInRightChild = FindLeafOrNYT(currentPath + '1', inner.Right);
+            return foundInRightChild ? foundInRightChild : FindLeafOrNYT(currentPath + '0', inner.Left);
+        }
+        return false;
+      }
+
+      FindLeafOrNYT("", Root);
+
+      return leafPath != null ? (leafPath, true) : (nytPath, false);
+    }
+
   }
 
 }
