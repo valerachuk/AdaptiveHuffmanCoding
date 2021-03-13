@@ -3,7 +3,7 @@ using Xunit;
 using AdaptiveHuffman.Core.Tree;
 using AdaptiveHuffman.Core.Tree.Interfaces;
 using AdaptiveHuffman.UnitTests.Misc;
-using AdaptiveHuffman.UnitTests.DebugVisualizerTools;
+using AdaptiveHuffman.Core.DebugVisualizerTools;
 
 namespace AdaptiveHuffman.UnitTests
 {

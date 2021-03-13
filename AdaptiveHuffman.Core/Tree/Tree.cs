@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using AdaptiveHuffman.Core.Tree.Interfaces;
+using AdaptiveHuffman.Core.DebugVisualizerTools;
 
 namespace AdaptiveHuffman.Core.Tree
 {

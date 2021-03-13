@@ -1,6 +1,6 @@
 using Xunit;
 using AdaptiveHuffman.Core.Tree;
-using AdaptiveHuffman.UnitTests.DebugVisualizerTools;
+using AdaptiveHuffman.Core.DebugVisualizerTools;
 using AdaptiveHuffman.UnitTests.Misc;
 using System;
 

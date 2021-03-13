@@ -4,7 +4,7 @@ using AdaptiveHuffman.Core.Tree;
 using AdaptiveHuffman.Core.Tree.Interfaces;
 using AdaptiveHuffman.UnitTests.Misc;
 using System.Linq;
-using AdaptiveHuffman.UnitTests.DebugVisualizerTools;
+using AdaptiveHuffman.Core.DebugVisualizerTools;
 
 namespace AdaptiveHuffman.UnitTests
 {

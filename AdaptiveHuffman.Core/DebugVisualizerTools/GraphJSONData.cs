@@ -1,8 +1,7 @@
 using System.Collections.Generic;
 
-namespace AdaptiveHuffman.UnitTests.DebugVisualizerTools
+namespace AdaptiveHuffman.Core.DebugVisualizerTools
 {
-
   public class GraphJSONData
   {
     public object Kind => new { Graph = true };
