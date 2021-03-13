@@ -58,7 +58,7 @@ namespace AdaptiveHuffman.Core.Tree
 
     }
 
-    public void IncrementItem(string path)
+    public void IncrementItem(string path, int value = 1)
     {
       var pathQueue = new Queue<char>(path.ToCharArray());
 
@@ -66,10 +66,10 @@ namespace AdaptiveHuffman.Core.Tree
 
       while (pathQueue.Count > 0)
       {
-        currentItem.Weight++;
+        currentItem.Weight += value;
         currentItem = (pathQueue.Dequeue() == '0' ? (currentItem as InnerNode).Left : (currentItem as InnerNode).Right) as INotNYTTreeNode;
       }
-      currentItem.Weight++;
+      currentItem.Weight += value;
     }
 
     public (string, bool) FindLeafOrNYTByPayload(byte payload)
@@ -130,6 +130,72 @@ namespace AdaptiveHuffman.Core.Tree
         .SelectMany(kvp => kvp.Value);
     }
 
-  }
+    public static (string, string) FindFirstSiblingPropertyMissmatch(IEnumerable<(ITreeNode, string)> bypassedTreeNodes)
+    {
+      var bypassedTreeNodesArray = bypassedTreeNodes.ToArray();
+      var sublingProperyComparer = new SiblingPropertyTreeNodeComparer();
 
+      for (int i = 0; i < bypassedTreeNodesArray.Length - 1; i++)
+      {
+        var nodePathX = bypassedTreeNodesArray[i];
+        var nodePathY = bypassedTreeNodesArray[i + 1];
+
+        if (sublingProperyComparer.Compare(nodePathX.Item1, nodePathY.Item1) > 0)
+        {
+          return (nodePathX.Item2, nodePathY.Item2);
+        }
+      }
+
+      return (null, null);
+    }
+
+    public void SwapNodesByPathAndRebuildWeights(string nodeXPath, string nodeYPath)
+    {
+      InnerNode FindByPath(string path)
+      {
+        InnerNode currentNode = Root as InnerNode;
+        while (path != "")
+        {
+          var currentChildPath = path[0];
+          path = path.Substring(1, path.Length - 1);
+          currentNode = currentChildPath == '0' ? currentNode.Left as InnerNode : currentNode.Right as InnerNode;
+        }
+
+        return currentNode;
+      }
+
+      void SwapLeftAndRightClildAndRebuildWeights(string parentXPath, string parentYPath)
+      {
+        var parentX = FindByPath(parentXPath);
+        var parentY = FindByPath(parentYPath);
+
+        if (parentX != parentY)
+        {
+          var deltaWeightParentX = parentY.Right.Weight - parentX.Left.Weight;
+          var deltaWeightParentY = parentX.Left.Weight - parentY.Right.Weight;
+
+          IncrementItem(parentXPath, deltaWeightParentX);
+          IncrementItem(parentYPath, deltaWeightParentY);
+        }
+
+        var tmp = parentX.Left;
+        parentX.Left = parentY.Right;
+        parentY.Right = tmp;
+
+      }
+
+      var parentXPath = nodeXPath.Substring(0, nodeXPath.Length - 1);
+      var parentYPath = nodeYPath.Substring(0, nodeYPath.Length - 1);
+
+      if (nodeXPath.Last() == '0')
+      {
+        SwapLeftAndRightClildAndRebuildWeights(parentXPath, parentYPath);
+      }
+      else
+      {
+        SwapLeftAndRightClildAndRebuildWeights(parentYPath, parentXPath);
+      }
+
+    }
+  }
 }

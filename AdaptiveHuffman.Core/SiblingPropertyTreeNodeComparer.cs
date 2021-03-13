@@ -15,11 +15,11 @@ namespace AdaptiveHuffman.Core
         return compareWeights;
       }
 
-      if (nodeX is not InnerNode && nodeY is InnerNode)
+      if (nodeX is InnerNode && nodeY is not InnerNode)
       {
         return 1;
       }
-      if (nodeX is InnerNode && nodeY is not InnerNode)
+      if (nodeX is not InnerNode && nodeY is InnerNode)
       {
         return -1;
       }
