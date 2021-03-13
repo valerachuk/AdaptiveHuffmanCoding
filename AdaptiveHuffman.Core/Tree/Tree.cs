@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using AdaptiveHuffman.Core.Tree.Interfaces;
 
 namespace AdaptiveHuffman.Core.Tree
@@ -96,6 +97,37 @@ namespace AdaptiveHuffman.Core.Tree
       FindLeafOrNYT("", Root);
 
       return leafPath != null ? (leafPath, true) : (nytPath, false);
+    }
+
+    public IEnumerable<(ITreeNode, string)> SiblingPropertyBypass()
+    {
+      var treeNodeLayers = new Dictionary<int, List<(ITreeNode, string)>>();
+
+      void Bypass(ITreeNode node, string currentPath)
+      {
+        var inner = node as InnerNode;
+        if (inner != null)
+        {
+          Bypass(inner.Left, currentPath + "0");
+          Bypass(inner.Right, currentPath + "1");
+        }
+
+        var currentDepth = currentPath.Length;
+
+        if (!treeNodeLayers.ContainsKey(currentDepth))
+        {
+          treeNodeLayers[currentDepth] = new();
+        }
+
+        var currentLayer = treeNodeLayers[currentDepth];
+        currentLayer.Add((node, currentPath));
+      }
+
+      Bypass(Root, "");
+
+      return treeNodeLayers
+        .OrderByDescending(kvp => kvp.Key)
+        .SelectMany(kvp => kvp.Value);
     }
 
   }

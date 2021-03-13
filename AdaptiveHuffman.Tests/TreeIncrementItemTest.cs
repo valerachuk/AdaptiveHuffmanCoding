@@ -1,6 +1,7 @@
 using Xunit;
 using AdaptiveHuffman.Core.Tree;
 using AdaptiveHuffman.Tests.DebugVisualizerTools;
+using AdaptiveHuffman.Tests.Misc;
 using System;
 
 namespace AdaptiveHuffman.Tests
