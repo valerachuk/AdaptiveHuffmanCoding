@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace AdaptiveHuffman.Tests.DebugVisualizerTools
+namespace AdaptiveHuffman.UnitTests.DebugVisualizerTools
 {
 
   public class GraphJSONData

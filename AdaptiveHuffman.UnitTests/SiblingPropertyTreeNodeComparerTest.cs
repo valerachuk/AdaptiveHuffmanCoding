@@ -4,7 +4,7 @@ using AdaptiveHuffman.Core.Tree;
 using System.Collections.Generic;
 using AdaptiveHuffman.Core;
 
-namespace AdaptiveHuffman.Tests
+namespace AdaptiveHuffman.UnitTests
 {
 
   public class SiblingPropertyTreeNodeComparerTest

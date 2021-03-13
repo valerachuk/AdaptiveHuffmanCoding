@@ -1,7 +1,7 @@
 using AdaptiveHuffman.Core.Tree;
 using AdaptiveHuffman.Core.Tree.Interfaces;
 
-namespace AdaptiveHuffman.Tests.Misc
+namespace AdaptiveHuffman.UnitTests.Misc
 {
   public static class TestUtils
   {

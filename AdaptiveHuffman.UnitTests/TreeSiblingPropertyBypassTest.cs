@@ -2,10 +2,10 @@ using System.Linq;
 using Xunit;
 using AdaptiveHuffman.Core.Tree;
 using AdaptiveHuffman.Core.Tree.Interfaces;
-using AdaptiveHuffman.Tests.Misc;
-using AdaptiveHuffman.Tests.DebugVisualizerTools;
+using AdaptiveHuffman.UnitTests.Misc;
+using AdaptiveHuffman.UnitTests.DebugVisualizerTools;
 
-namespace AdaptiveHuffman.Tests
+namespace AdaptiveHuffman.UnitTests
 {
   public class TreeSiblingPropertyBypassTest
   {

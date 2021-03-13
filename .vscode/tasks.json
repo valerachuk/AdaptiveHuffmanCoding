@@ -7,7 +7,7 @@
       "type": "process",
       "args": [
         "build",
-        "${workspaceFolder}/AdaptiveHuffman.Tests/AdaptiveHuffman.Tests.csproj",
+        "${workspaceFolder}/AdaptiveHuffman.UnitTests/AdaptiveHuffman.UnitTests.csproj",
         "/property:GenerateFullPaths=true",
         "/consoleloggerparameters:NoSummary"
       ],
@@ -19,7 +19,7 @@
       "type": "process",
       "args": [
         "publish",
-        "${workspaceFolder}/AdaptiveHuffman.Tests/AdaptiveHuffman.Tests.csproj",
+        "${workspaceFolder}/AdaptiveHuffman.UnitTests/AdaptiveHuffman.UnitTests.csproj",
         "/property:GenerateFullPaths=true",
         "/consoleloggerparameters:NoSummary"
       ],
@@ -32,7 +32,7 @@
       "args": [
         "watch",
         "run",
-        "${workspaceFolder}/AdaptiveHuffman.Tests/AdaptiveHuffman.Tests.csproj",
+        "${workspaceFolder}/AdaptiveHuffman.UnitTests/AdaptiveHuffman.UnitTests.csproj",
         "/property:GenerateFullPaths=true",
         "/consoleloggerparameters:NoSummary"
       ],

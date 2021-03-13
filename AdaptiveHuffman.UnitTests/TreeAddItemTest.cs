@@ -1,10 +1,10 @@
 using Xunit;
 using AdaptiveHuffman.Core.Tree;
-using AdaptiveHuffman.Tests.DebugVisualizerTools;
-using AdaptiveHuffman.Tests.Misc;
+using AdaptiveHuffman.UnitTests.DebugVisualizerTools;
+using AdaptiveHuffman.UnitTests.Misc;
 using System;
 
-namespace AdaptiveHuffman.Tests
+namespace AdaptiveHuffman.UnitTests
 {
   public class TreeAddItemTest
   {

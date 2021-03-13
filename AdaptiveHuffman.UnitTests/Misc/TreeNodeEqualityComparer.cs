@@ -3,7 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using AdaptiveHuffman.Core.Tree.Interfaces;
 using AdaptiveHuffman.Core.Tree;
 
-namespace AdaptiveHuffman.Tests.Misc
+namespace AdaptiveHuffman.UnitTests.Misc
 {
   public class TreeNodeEqualityComparer : IEqualityComparer<ITreeNode>
   {

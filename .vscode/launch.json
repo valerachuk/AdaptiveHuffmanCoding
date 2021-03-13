@@ -10,9 +10,9 @@
       "request": "launch",
       "preLaunchTask": "build",
       // If you have changed target frameworks, make sure to update the program path.
-      "program": "${workspaceFolder}/AdaptiveHuffman.Tests/bin/Debug/net5.0/AdaptiveHuffman.Tests.dll",
+      "program": "${workspaceFolder}/AdaptiveHuffman.UnitTests/bin/Debug/net5.0/AdaptiveHuffman.UnitTests.dll",
       "args": [],
-      "cwd": "${workspaceFolder}/AdaptiveHuffman.Tests",
+      "cwd": "${workspaceFolder}/AdaptiveHuffman.UnitTests",
       // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
       "console": "internalConsole",
       "stopAtEntry": false

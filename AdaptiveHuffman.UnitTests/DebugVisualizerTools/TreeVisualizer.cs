@@ -2,7 +2,7 @@ using AdaptiveHuffman.Core.Tree;
 using System.Text.Json;
 using AdaptiveHuffman.Core.Tree.Interfaces;
 
-namespace AdaptiveHuffman.Tests.DebugVisualizerTools
+namespace AdaptiveHuffman.UnitTests.DebugVisualizerTools
 {
   public static class TreeVisualizer
   {

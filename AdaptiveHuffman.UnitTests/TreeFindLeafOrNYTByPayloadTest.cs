@@ -1,9 +1,9 @@
 using Xunit;
 using AdaptiveHuffman.Core.Tree;
-using AdaptiveHuffman.Tests.DebugVisualizerTools;
+using AdaptiveHuffman.UnitTests.DebugVisualizerTools;
 using System;
 
-namespace AdaptiveHuffman.Tests
+namespace AdaptiveHuffman.UnitTests
 {
   public class TreeFindLeafOrNYTByPayloadTest
   {
