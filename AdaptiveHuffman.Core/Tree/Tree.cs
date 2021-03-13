@@ -197,5 +197,17 @@ namespace AdaptiveHuffman.Core.Tree
       }
 
     }
+
+    public void FixSiblingPropery()
+    {
+      while (true)
+      {
+        var bypass = SiblingPropertyBypass();
+        var missmatch = FindFirstSiblingPropertyMissmatch(bypass);
+        if (missmatch == (null, null))
+          break;
+        SwapNodesByPathAndRebuildWeights(missmatch.Item1, missmatch.Item2);
+      }
+    }
   }
 }
