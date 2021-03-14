@@ -12,7 +12,7 @@ namespace AdaptiveHuffman.UnitTests
     [InlineData(new object[] { "", "01", 0b_1111_1111, "01", "1", "00", 0b_0000_1111 }, new byte[] { 0b_1111_1110, 0b_1001_1011, 0b_000_0111, 7 })]
     [InlineData(new object[] { 222, 18 }, new byte[] { 222, 18, 0 })]
     [InlineData(new object[] { "10111" }, new byte[] { 0b_1_1101, 5 })]
-    public void BitWriter_RandomWrites_ShouldWorksCorrect(object[] toWrite, byte[] expectedBuffer)
+    public void BitWriter_RandomWrites_ShouldWorkCorrect(object[] toWrite, byte[] expectedBuffer)
     {
       // Arrange
       using var memoryStream = new MemoryStream();
@@ -31,7 +31,7 @@ namespace AdaptiveHuffman.UnitTests
         }
       }
 
-      bitWriter.Dispose();
+      bitWriter.WriteTerminator();
 
       // Assert
       var actualBuffer = memoryStream.ToArray();

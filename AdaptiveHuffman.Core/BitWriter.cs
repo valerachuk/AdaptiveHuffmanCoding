@@ -3,11 +3,11 @@ using System.IO;
 
 namespace AdaptiveHuffman.Core
 {
-  public class BitWriter : IDisposable
+  public class BitWriter
   {
     private byte _tempByte = 0;
     private int _currentTempByteWrites = 0;
-    private Stream _stream;
+    private readonly Stream _stream;
 
     public BitWriter(Stream stream)
     {
@@ -51,7 +51,7 @@ namespace AdaptiveHuffman.Core
       }
     }
 
-    public void Dispose()
+    public void WriteTerminator()
     {
       if (_currentTempByteWrites != 0)
       {
