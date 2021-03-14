@@ -5,7 +5,7 @@ using AdaptiveHuffman.Core.DebugVisualizerTools;
 
 namespace AdaptiveHuffman.Core.Tree
 {
-  public class Tree
+  public class Tree : ITree
   {
     public ITreeNode Root { get; set; } = new NYTNode();
 
@@ -209,6 +209,18 @@ namespace AdaptiveHuffman.Core.Tree
           break;
         SwapNodesByPathAndRebuildWeights(missmatch.Item1, missmatch.Item2);
       }
+    }
+
+    public void AddItemAndFixSiblingProperty(byte payload, string nytPath)
+    {
+      AddItem(payload, nytPath);
+      FixSiblingPropery();
+    }
+
+    public void IncrementItemAndFixSiblingProperty(string path)
+    {
+      IncrementItem(path);
+      FixSiblingPropery();
     }
   }
 }
