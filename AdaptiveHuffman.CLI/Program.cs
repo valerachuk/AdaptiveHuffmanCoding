@@ -1,5 +1,4 @@
-﻿using System;
-using CliFx;
+﻿using CliFx;
 using System.Threading.Tasks;
 
 namespace AdaptiveHuffman.CLI

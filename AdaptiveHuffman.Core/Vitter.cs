@@ -1,5 +1,7 @@
 using System.IO;
-using AdaptiveHuffman.Core.Tree.Interfaces;
+using AdaptiveHuffman.Core.Interfaces;
+using AdaptiveHuffman.Core.TreeNodes;
+using AdaptiveHuffman.Core.DebugVisualizerTools;
 
 namespace AdaptiveHuffman.Core
 {
@@ -7,7 +9,7 @@ namespace AdaptiveHuffman.Core
   {
     public static void Compress(Stream inputStream, Stream outputStream)
     {
-      ITree tree = new Tree.Tree();
+      IHuffmanTree tree = new HuffmanTree();
       var bitWriter = new BitWriter(outputStream);
 
       while (true)
@@ -36,7 +38,7 @@ namespace AdaptiveHuffman.Core
 
     public static void Decompress(Stream inputStream, Stream outputStream)
     {
-      ITree tree = new Tree.Tree();
+      IHuffmanTree tree = new HuffmanTree();
       var bitReader = new BitReader(inputStream);
 
       while (!bitReader.IsEndOfStream)

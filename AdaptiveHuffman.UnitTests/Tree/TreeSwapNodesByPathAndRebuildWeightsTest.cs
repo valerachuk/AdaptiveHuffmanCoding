@@ -1,12 +1,12 @@
 using Xunit;
 using System.Collections.Generic;
-using AdaptiveHuffman.Core.Tree;
-using AdaptiveHuffman.Core.Tree.Interfaces;
+using AdaptiveHuffman.Core.TreeNodes;
+using AdaptiveHuffman.Core.TreeNodes.Interfaces;
 using AdaptiveHuffman.UnitTests.Misc;
 using System.Linq;
 using AdaptiveHuffman.Core.DebugVisualizerTools;
 
-namespace AdaptiveHuffman.UnitTests
+namespace AdaptiveHuffman.UnitTests.Tree
 {
   public class TreeSwapNodesByPathAndRebuildWeights
   {
@@ -15,7 +15,7 @@ namespace AdaptiveHuffman.UnitTests
     public void SwappingNodesInTree_ShouldWorksFine(string pathX, string pathY, IEnumerable<ITreeNode> expectedBypass)
     {
       // Arrange
-      var tree = new Tree();
+      var tree = new HuffmanTree();
 
       var node110 = new NYTNode();
       var node111 = new LeafNode(0, 2);

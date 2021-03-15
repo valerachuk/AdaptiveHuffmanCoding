@@ -1,5 +1,6 @@
-using AdaptiveHuffman.Core.Tree.Interfaces;
-namespace AdaptiveHuffman.Core.Tree
+using AdaptiveHuffman.Core.TreeNodes.Interfaces;
+
+namespace AdaptiveHuffman.Core.TreeNodes
 {
   public class InnerNode : INotNYTTreeNode
   {

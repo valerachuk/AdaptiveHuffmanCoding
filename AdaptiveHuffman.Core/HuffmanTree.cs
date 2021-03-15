@@ -1,12 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using AdaptiveHuffman.Core.Tree.Interfaces;
+using AdaptiveHuffman.Core.TreeNodes.Interfaces;
+using AdaptiveHuffman.Core.Interfaces;
 using AdaptiveHuffman.Core.DebugVisualizerTools;
 
-namespace AdaptiveHuffman.Core.Tree
+namespace AdaptiveHuffman.Core.TreeNodes
 {
-  public class Tree : ITree
+  public class HuffmanTree : IHuffmanTree
   {
     public ITreeNode Root { get; set; } = new NYTNode();
 

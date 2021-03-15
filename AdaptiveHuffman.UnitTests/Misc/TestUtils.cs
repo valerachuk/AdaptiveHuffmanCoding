@@ -1,5 +1,5 @@
-using AdaptiveHuffman.Core.Tree;
-using AdaptiveHuffman.Core.Tree.Interfaces;
+using AdaptiveHuffman.Core.TreeNodes;
+using AdaptiveHuffman.Core.TreeNodes.Interfaces;
 
 namespace AdaptiveHuffman.UnitTests.Misc
 {

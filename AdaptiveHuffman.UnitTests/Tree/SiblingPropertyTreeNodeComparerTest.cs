@@ -1,10 +1,10 @@
 using Xunit;
-using AdaptiveHuffman.Core.Tree.Interfaces;
-using AdaptiveHuffman.Core.Tree;
+using AdaptiveHuffman.Core.TreeNodes.Interfaces;
+using AdaptiveHuffman.Core.TreeNodes;
 using System.Collections.Generic;
 using AdaptiveHuffman.Core;
 
-namespace AdaptiveHuffman.UnitTests
+namespace AdaptiveHuffman.UnitTests.Tree
 {
 
   public class SiblingPropertyTreeNodeComparerTest

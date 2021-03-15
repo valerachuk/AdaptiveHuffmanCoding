@@ -1,12 +1,12 @@
-using AdaptiveHuffman.Core.Tree;
-using AdaptiveHuffman.Core.Tree.Interfaces;
+using AdaptiveHuffman.Core.TreeNodes;
+using AdaptiveHuffman.Core.TreeNodes.Interfaces;
 using System.Text.Json;
 
 namespace AdaptiveHuffman.Core.DebugVisualizerTools
 {
   public static class TreeVisualizer
   {
-    public static string VisualizeTree(this AdaptiveHuffman.Core.Tree.Tree tree)
+    public static string VisualizeTree(this AdaptiveHuffman.Core.TreeNodes.HuffmanTree tree)
     {
       var graphJson = new GraphJSONData();
       var id = 0;

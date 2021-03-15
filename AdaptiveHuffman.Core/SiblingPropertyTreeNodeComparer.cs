@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using AdaptiveHuffman.Core.Tree.Interfaces;
-using AdaptiveHuffman.Core.Tree;
+using AdaptiveHuffman.Core.TreeNodes.Interfaces;
+using AdaptiveHuffman.Core.TreeNodes;
 
 namespace AdaptiveHuffman.Core
 {

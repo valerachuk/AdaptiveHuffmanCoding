@@ -1,10 +1,10 @@
 using Xunit;
-using AdaptiveHuffman.Core.Tree;
+using AdaptiveHuffman.Core.TreeNodes;
 using AdaptiveHuffman.Core.DebugVisualizerTools;
 using AdaptiveHuffman.UnitTests.Misc;
 using System;
 
-namespace AdaptiveHuffman.UnitTests
+namespace AdaptiveHuffman.UnitTests.Tree
 {
   public class TreeIncrementItemTest
   {
@@ -22,7 +22,7 @@ namespace AdaptiveHuffman.UnitTests
       var expectedLeafWeight3 = 4;
       var expectedLeafWeight4 = 1;
 
-      var tree = new Tree();
+      var tree = new HuffmanTree();
 
       // Act
       tree.AddItem(1, "");
@@ -70,7 +70,7 @@ namespace AdaptiveHuffman.UnitTests
     public void IncrementItemWithInvalidPath_ShouldFail_1()
     {
       // Arrange
-      var tree = new Tree();
+      var tree = new HuffmanTree();
 
       // Act
       // Assert
@@ -81,7 +81,7 @@ namespace AdaptiveHuffman.UnitTests
     public void IncrementItemWithInvalidPath_ShouldFail_2()
     {
       // Arrange
-      var tree = new Tree();
+      var tree = new HuffmanTree();
 
       // Act
       tree.AddItem(1, "");

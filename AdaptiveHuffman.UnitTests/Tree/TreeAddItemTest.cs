@@ -1,10 +1,10 @@
 using Xunit;
-using AdaptiveHuffman.Core.Tree;
+using AdaptiveHuffman.Core.TreeNodes;
 using AdaptiveHuffman.Core.DebugVisualizerTools;
 using AdaptiveHuffman.UnitTests.Misc;
 using System;
 
-namespace AdaptiveHuffman.UnitTests
+namespace AdaptiveHuffman.UnitTests.Tree
 {
   public class TreeAddItemTest
   {
@@ -16,7 +16,7 @@ namespace AdaptiveHuffman.UnitTests
       expectedPayload2 = 2,
       expectedPayload3 = 3;
 
-      var tree = new Tree();
+      var tree = new HuffmanTree();
 
       // Act
       tree.AddItem(expectedPayload1, "");
@@ -54,7 +54,7 @@ namespace AdaptiveHuffman.UnitTests
       var expectedWeight3 = 2;
       var expectedWeight4 = 1;
 
-      var tree = new Tree();
+      var tree = new HuffmanTree();
 
       // Act
       tree.AddItem(expectedPayload1, "");
@@ -96,7 +96,7 @@ namespace AdaptiveHuffman.UnitTests
     public void CreatingTree_ShouldBeInitializedWithNYTNode()
     {
       // Arrange
-      var tree = new Tree();
+      var tree = new HuffmanTree();
 
       // Act
       var defaultRoot = tree.Root;
@@ -110,7 +110,7 @@ namespace AdaptiveHuffman.UnitTests
     public void AddingItemsToTreeWithInvalidPath_ShouldFail_1()
     {
       // Arrange
-      var tree = new Tree();
+      var tree = new HuffmanTree();
 
       // Act
       // Assert
@@ -121,7 +121,7 @@ namespace AdaptiveHuffman.UnitTests
     public void AddingItemsToTreeWithInvalidPath_ShouldFail_2()
     {
       // Arrange
-      var tree = new Tree();
+      var tree = new HuffmanTree();
 
       // Act
       // Assert
@@ -132,7 +132,7 @@ namespace AdaptiveHuffman.UnitTests
     public void AddingItemsToTreeWithInvalidPath_ShouldFail_3()
     {
       // Arrange
-      var tree = new Tree();
+      var tree = new HuffmanTree();
 
       // Act
       tree.AddItem(3, "");
@@ -146,7 +146,7 @@ namespace AdaptiveHuffman.UnitTests
     public void AddingItemsToTreeWithInvalidPath_ShouldFail_4()
     {
       // Arrange
-      var tree = new Tree();
+      var tree = new HuffmanTree();
 
       // Act
       tree.AddItem(3, "");

@@ -1,4 +1,4 @@
-namespace AdaptiveHuffman.Core.Tree.Interfaces
+namespace AdaptiveHuffman.Core.TreeNodes.Interfaces
 {
   public interface INotNYTTreeNode : ITreeNode
   {

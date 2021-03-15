@@ -1,9 +1,9 @@
 using Xunit;
-using AdaptiveHuffman.Core.Tree;
+using AdaptiveHuffman.Core.TreeNodes;
 using AdaptiveHuffman.Core.DebugVisualizerTools;
 using System;
 
-namespace AdaptiveHuffman.UnitTests
+namespace AdaptiveHuffman.UnitTests.Tree
 {
   public class TreeFindLeafOrNYTByPayloadTest
   {
@@ -16,7 +16,7 @@ namespace AdaptiveHuffman.UnitTests
     public void SearchingForExistingLeaf_ShouldReturnIt(byte payloadToFind, string expectedPath, bool expectedFoundResult)
     {
       // Arrange
-      var tree = new Tree();
+      var tree = new HuffmanTree();
 
       // Act
       tree.AddItem(1, "");

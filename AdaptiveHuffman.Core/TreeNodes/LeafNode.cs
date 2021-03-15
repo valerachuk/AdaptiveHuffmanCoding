@@ -1,6 +1,6 @@
-using AdaptiveHuffman.Core.Tree.Interfaces;
+using AdaptiveHuffman.Core.TreeNodes.Interfaces;
 
-namespace AdaptiveHuffman.Core.Tree
+namespace AdaptiveHuffman.Core.TreeNodes
 {
   public class LeafNode : INotNYTTreeNode
   {

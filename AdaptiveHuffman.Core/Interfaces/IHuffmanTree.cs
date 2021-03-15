@@ -1,8 +1,8 @@
 using System;
 
-namespace AdaptiveHuffman.Core.Tree.Interfaces
+namespace AdaptiveHuffman.Core.Interfaces
 {
-  public interface ITree
+  public interface IHuffmanTree
   {
     void AddItemAndFixSiblingProperty(byte payload, string nytPath);
     void IncrementItemAndFixSiblingProperty(string path);

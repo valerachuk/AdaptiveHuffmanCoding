@@ -1,12 +1,12 @@
 using Xunit;
 using System.Collections.Generic;
-using AdaptiveHuffman.Core.Tree;
-using AdaptiveHuffman.Core.Tree.Interfaces;
+using AdaptiveHuffman.Core.TreeNodes;
+using AdaptiveHuffman.Core.TreeNodes.Interfaces;
 using AdaptiveHuffman.UnitTests.Misc;
 using System.Linq;
 using AdaptiveHuffman.Core.DebugVisualizerTools;
 
-namespace AdaptiveHuffman.UnitTests
+namespace AdaptiveHuffman.UnitTests.Tree
 {
   public class TreeFixSiblingProperyTest
   {
@@ -14,7 +14,7 @@ namespace AdaptiveHuffman.UnitTests
     public void FixingInvalidSiblingProperty_ShouldFixinvalidSiblingProperty()
     {
       // Arrange
-      var tree = new Tree();
+      var tree = new HuffmanTree();
 
       var node110 = new NYTNode();
       var node111 = new LeafNode(0, 2);
@@ -59,7 +59,7 @@ namespace AdaptiveHuffman.UnitTests
     public void FixingValidSiblingProperty_ShouldNotModifyTree()
     {
       // Arrange
-      var tree = new Tree();
+      var tree = new HuffmanTree();
 
       var node100 = new NYTNode();
       var node101 = new LeafNode(1, 1);

@@ -1,11 +1,11 @@
 using System.Linq;
 using Xunit;
-using AdaptiveHuffman.Core.Tree;
-using AdaptiveHuffman.Core.Tree.Interfaces;
+using AdaptiveHuffman.Core.TreeNodes;
+using AdaptiveHuffman.Core.TreeNodes.Interfaces;
 using AdaptiveHuffman.UnitTests.Misc;
 using AdaptiveHuffman.Core.DebugVisualizerTools;
 
-namespace AdaptiveHuffman.UnitTests
+namespace AdaptiveHuffman.UnitTests.Tree
 {
   public class TreeSiblingPropertyBypassTest
   {
@@ -13,7 +13,7 @@ namespace AdaptiveHuffman.UnitTests
     public void SiblingPropertyBypass_ShouldBeCorrect_1()
     {
       // Arrange
-      var tree = new Tree();
+      var tree = new HuffmanTree();
       var expectedBypassSequence = new (ITreeNode, string)[]
       {
         (new NYTNode(), "0000"),
@@ -50,7 +50,7 @@ namespace AdaptiveHuffman.UnitTests
     public void SiblingPropertyBypass_ShouldBeCorrect_2()
     {
       // Arrange
-      var tree = new Tree();
+      var tree = new HuffmanTree();
       var expectedBypassSequence = new (ITreeNode, string)[]
       {
         (new LeafNode(4, 1), "1010"),

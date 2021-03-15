@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using AdaptiveHuffman.Core.Tree.Interfaces;
-using AdaptiveHuffman.Core.Tree;
+using AdaptiveHuffman.Core.TreeNodes.Interfaces;
+using AdaptiveHuffman.Core.TreeNodes;
 using Xunit;
 
-namespace AdaptiveHuffman.UnitTests
+namespace AdaptiveHuffman.UnitTests.Tree
 {
   public class TreeFindFirstSiblingPropertyMissmatchTest
   {
@@ -15,7 +15,7 @@ namespace AdaptiveHuffman.UnitTests
       // Arrange
 
       // Act
-      var actualMissmatch = Tree.FindFirstSiblingPropertyMissmatch(nodeSequence);
+      var actualMissmatch = HuffmanTree.FindFirstSiblingPropertyMissmatch(nodeSequence);
 
       // Assert
       Assert.Equal(expectedMissmath, actualMissmatch);
