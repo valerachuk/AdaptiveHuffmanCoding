@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using AdaptiveHuffman.Core.Tree.Interfaces;
@@ -8,6 +9,28 @@ namespace AdaptiveHuffman.Core.Tree
   public class Tree : ITree
   {
     public ITreeNode Root { get; set; } = new NYTNode();
+
+    public (string, byte?) FindLeafOrNYTByGenerator(Func<string> getNext)
+    {
+      var path = "";
+      var currentNode = Root;
+
+      while (true)
+      {
+        switch (currentNode)
+        {
+          case NYTNode _:
+            return (path, null);
+          case LeafNode leaf:
+            return (path, leaf.Payload);
+          case InnerNode inner:
+            var direction = getNext();
+            path += direction;
+            currentNode = (direction == "0" ? (currentNode as InnerNode).Left : (currentNode as InnerNode).Right);
+            break;
+        }
+      }
+    }
 
     public void AddItem(byte payload, string nytPath)
     {

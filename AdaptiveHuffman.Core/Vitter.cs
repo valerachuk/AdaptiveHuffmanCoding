@@ -5,7 +5,7 @@ namespace AdaptiveHuffman.Core
 {
   public static class Vitter
   {
-    public static void Encode(Stream inputStream, Stream outputStream)
+    public static void Compress(Stream inputStream, Stream outputStream)
     {
       ITree tree = new Tree.Tree();
       var bitWriter = new BitWriter(outputStream);
@@ -32,6 +32,28 @@ namespace AdaptiveHuffman.Core
       }
 
       bitWriter.WriteTerminator();
+    }
+
+    public static void Decompress(Stream inputStream, Stream outputStream)
+    {
+      ITree tree = new Tree.Tree();
+      var bitReader = new BitReader(inputStream);
+
+      while (!bitReader.IsEndOfStream)
+      {
+        var (path, payload) = tree.FindLeafOrNYTByGenerator(() => bitReader.ReadBit().ToString());
+        if (payload == null)
+        {
+          var readByte = bitReader.ReadByte();
+          tree.AddItemAndFixSiblingProperty(readByte, path);
+          outputStream.WriteByte(readByte);
+        }
+        else
+        {
+          tree.IncrementItemAndFixSiblingProperty(path);
+          outputStream.WriteByte((byte)payload);
+        }
+      }
     }
   }
 }
