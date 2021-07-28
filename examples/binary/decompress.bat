@@ -1,0 +1,1 @@
+dotnet run decompress compressed.bin decompressed.bin --project ../../AdaptiveHuffman.CLI/AdaptiveHuffman.CLI.csproj

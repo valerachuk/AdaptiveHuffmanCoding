@@ -1,0 +1,1 @@
+dotnet run compress initial.txt compressed.txt --project ../../AdaptiveHuffman.CLI/AdaptiveHuffman.CLI.csproj

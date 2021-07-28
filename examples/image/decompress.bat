@@ -1,0 +1,1 @@
+dotnet run decompress compressed.png decompressed.png --project ../../AdaptiveHuffman.CLI/AdaptiveHuffman.CLI.csproj

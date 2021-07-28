@@ -1,0 +1,1 @@
+dotnet run compress initial.png compressed.png --project ../../AdaptiveHuffman.CLI/AdaptiveHuffman.CLI.csproj
