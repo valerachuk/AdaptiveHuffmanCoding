@@ -13,7 +13,7 @@ namespace AdaptiveHuffman.Core
     private bool _isLastByte = false;
 
     private byte CurrentByte => _readQueue[0];
-    private byte CurrentBitSize => _isLastByte && _readQueue[1] != 0 ? _readQueue[1] : 8;
+    private byte CurrentBitSize => _isLastByte && _readQueue[1] != 0 ? _readQueue[1] : (byte)8;
 
     private bool CurrentBitReadDone => _currentByteReads >= CurrentBitSize;
     public bool IsEndOfStream => _readQueue.Count == 2 && CurrentBitReadDone || _readQueue.Count <= 1;
